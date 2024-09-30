@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(225, 225, 225);
+  font-family: "Poppins", sans-serif;
+}
+
+form {
+  width: 50%;
+  background: #fff;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.072);
+  border-radius: 10px;
+  padding: 2em;
+}
+
+.inputs-cont {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+.inputs-cont div {
+  display: flex;
+  flex-direction: column;
+  width: 47%;
+  gap: 8px;
+}
+.inputs-cont div label, .sub-text{
+color: #505050;
+}
+
+.inputs-cont div label {
+  font-size: 16px;
+}
+
+.inputs-cont div input {
+    padding: 12px 6px;
+    outline: none;
+    border-radius: 10px;
+    font-size: 18px;
+    border: 3px solid rgb(224, 224, 224);
+}
+
+
+   input[type="date"] {
+      color: #8a8a8a; /* Change the text color */
+      text-transform: uppercase; /* Text transformation */
+    }
+
+    input[type="date"]::-webkit-datetime-edit {
+      color: #ababab; /* Change color for the date value in WebKit-based browsers */
+      text-transform: uppercase; /* Forcing uppercase might not affect placeholders but does affect the entered value */
+    }
+    
+    input[type="date"]::-webkit-datetime-edit-month-field,
+    input[type="date"]::-webkit-datetime-edit-day-field,
+    input[type="date"]::-webkit-datetime-edit-year-field {
+      color: #919191;
+    }
+
+     input[type="submit"] {
+        font-weight: bold;
+        border: none!important;
+        background-color: rgb(38, 0, 128);
+        color: #fff;
+     }
+     .upload-text{
+        /* margin-bottom: -1px; */
+        font-weight: bold;
+     }
