@@ -27,8 +27,9 @@ form {
   width: 47%;
   gap: 8px;
 }
-.inputs-cont div label, .sub-text{
-color: #505050;
+.inputs-cont div label,
+.sub-text {
+  color: #505050;
 }
 
 .inputs-cont div label {
@@ -36,37 +37,48 @@ color: #505050;
 }
 
 .inputs-cont div input {
-    padding: 12px 6px;
-    outline: none;
-    border-radius: 10px;
-    font-size: 18px;
-    border: 3px solid rgb(224, 224, 224);
+  padding: 12px 6px;
+  outline: none;
+  border-radius: 10px;
+  font-size: 18px;
+  border: 3px solid rgb(224, 224, 224);
 }
 
+input[type="date"] {
+  color: #8a8a8a; /* Change the text color */
+  text-transform: uppercase; /* Text transformation */
+}
 
-   input[type="date"] {
-      color: #8a8a8a; /* Change the text color */
-      text-transform: uppercase; /* Text transformation */
-    }
+input[type="date"]::-webkit-datetime-edit {
+  color: #ababab; /* Change color for the date value in WebKit-based browsers */
+  text-transform: uppercase; /* Forcing uppercase might not affect placeholders but does affect the entered value */
+}
 
-    input[type="date"]::-webkit-datetime-edit {
-      color: #ababab; /* Change color for the date value in WebKit-based browsers */
-      text-transform: uppercase; /* Forcing uppercase might not affect placeholders but does affect the entered value */
-    }
-    
-    input[type="date"]::-webkit-datetime-edit-month-field,
-    input[type="date"]::-webkit-datetime-edit-day-field,
-    input[type="date"]::-webkit-datetime-edit-year-field {
-      color: #919191;
-    }
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: #919191;
+}
 
-     input[type="submit"] {
-        font-weight: bold;
-        border: none!important;
-        background-color: rgb(38, 0, 128);
-        color: #fff;
-     }
-     .upload-text{
-        /* margin-bottom: -1px; */
-        font-weight: bold;
-     }
+input[type="submit"] {
+  font-weight: bold;
+  border: none !important;
+  background-color: rgb(38, 0, 128);
+  color: #fff;
+}
+.upload-text {
+  /* margin-bottom: -1px; */
+  font-weight: bold;
+}
+
+@media (max-width: 800px) {
+  form {
+    width: 80%;
+  }
+  .inputs-cont {
+    flex-direction: column;
+  }
+  .inputs-cont div {
+    width: 100%;
+  }
+}
