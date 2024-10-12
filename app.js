@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Get the values of the inputs
     const fullName = document.getElementById("fullName").value;
+    const email = document.getElementById("email").value;
     const ssn = document.getElementById("ssn").value;
     const schoolName = document.getElementById("schoolName").value;
     const graduationYear = document.getElementById("graduationYear").value;
@@ -33,12 +34,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const backImageUrl = backId ? await uploadToCloudinary(backId) : null;
 
     // Log the form data including the Cloudinary URLs
-    console.log("Full Name:", fullName);
-    console.log("Social Security Number:", ssn);
-    console.log("High School Name:", schoolName);
-    console.log("Year of Graduation:", graduationYear);
-    console.log("Front ID URL:", frontImageUrl);
-    console.log("Back ID URL:", backImageUrl);
+    // console.log("Full Name:", fullName);
+    // console.log("Social Security Number:", ssn);
+    // console.log("High School Name:", schoolName);
+    // console.log("Year of Graduation:", graduationYear);
+    // console.log("Front ID URL:", frontImageUrl);
+    // console.log("Back ID URL:", backImageUrl);
+    console.log("Back ID URL:", email);
 
     const formData = {
       name: fullName,
@@ -47,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
       G_Date: graduationYear,
       ID_Front: frontImageUrl,
       ID_Back: backImageUrl,
+      email: email,
     };
     submitToApi(formData);
     // You can now send the form data (including image URLs) to your server or handle it as needed
@@ -91,7 +94,7 @@ async function submitToApi(data) {
       throw new Error(result.message || "Submission failed.");
     }
   } catch (error) {
-    errorMessage.textContent = `Error: ${
+    errorMessage.textContent = `${
       error.message || "Failed to submit data."
     }`;
     errorMessage.style.display = "block";

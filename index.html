@@ -11,58 +11,7 @@
 </head>
 
 <body>
-    <!-- <form action="">
-        <div>
-            <h2>Sign Up</h2>
-            <p class="sub-text">Enter your details below to create your account and get started.</p>
-        </div>
-        <div class="inputs-cont">
-            <div>
-                <label for="">Full Name</label>
-                <input type="text" placeholder="John Doe">
-            </div>
-            <div>
-                <label for="">Social Security Number</label>
-                <input type="email" placeholder="000 00 0000">
-            </div>
-        </div>
-        <div class="inputs-cont">
-            <div>
-                <label for="">High School Name</label>
-                <input type="text" placeholder="Best Legacy">
-            </div>
-            <div>
-                <label for="">Year of Graduation</label>
-                <input type="date">
-            </div>
-        </div>
-        <!-- <div class="inputs-cont">
-            <div>
-                <label for="">Nationality</label>
-                <input type="text" placeholder="enter">
-            </div>
-            <div>
-                <label for="">ID Type</label>
-                <input type="email" placeholder="example@gmail.com">
-            </div>
-        </div> -->
-    <!-- <p class="upload-text">Upload Valid ID</p>
-    <div class="inputs-cont">
-        <div>
-            <label for="">Front</label>
-            <input type="file" placeholder="enter...">
-        </div>
-        <div>
-            <label for="">Back</label>
-            <input type="file" placeholder="enter...">
-        </div>
-    </div>
-    <div class="inputs-cont">
-        <div>
-            <input type="submit" value="Confirm">
-        </div>
-    </div>
-    </form> -->
+
     <form id="signupForm" action="">
         <img src="./logo.png" alt="logo" width="80px">
         <div>
@@ -78,6 +27,16 @@
                 <label for="ssn">Social Security Number</label>
                 <input required id="ssn" type="text" placeholder="000 00 0000">
             </div>
+        </div>
+        <div class="inputs-cont">
+            <div>
+                <label for="email">Email</label>
+                <input required id="email" type="email" placeholder="example@email.com">
+            </div>
+            <!-- <div>
+                <label for="ssn">Social Security Number</label>
+                <input required id="ssn" type="text" placeholder="000 00 0000">
+            </div> -->
         </div>
         <div class="inputs-cont">
             <div>
@@ -101,12 +60,18 @@
             </div>
         </div>
         <div id="message-container">
-            <p id="success-message" style="color: green; display: none;"></p>
-            <p id="error-message" style="color: red; display: none;"></p>
+            <p id="success-message"
+                style="border: 1px solid green;border-radius: 5px; display: none;color:green;font-weight: bold;padding: 5px;width: fit-content;">
+                </p>
+            <p id="error-message"
+                style="border: 1px solid red;color: red; display: none;border-radius: 5px;font-weight: bold;padding: 5px;width: fit-content;">
+                </p>
         </div>
         <div id="loading-container">
-            <p id="loading-message" style="color: blue; display: none;">Submitting...</p>
         </div>
+        <p id="loading-message"
+            style="border: 1px solid rgb(66, 9, 255); display: none;color:blue;border-radius: 5px;font-weight: bold;padding: 5px;width: fit-content;">
+            Submitting...</p>
         <div class="inputs-cont">
             <div>
                 <input type="submit" value="Confirm">
