@@ -14,10 +14,10 @@
 <body>
 
     <form id="signupForm" action="">
-       <div class="logo-cont">
-        <img src="./faugetLogo.jpg" alt="logo" width="80px">
-        Fauget Properties
-       </div>
+        <div class="logo-cont">
+            <img src="./faugetLogo.jpg" alt="logo" width="40px">
+            <h4>Fauget Properties</h4>
+        </div>
         <div>
             <h2>Fill up your details</h2>
             <p class="sub-text">Enter your details below to find a desired apartment and get started.</p>
@@ -32,6 +32,44 @@
                 <input required id="ssn" type="text" placeholder="000 00 0000">
             </div>
         </div>
+        <div class="inputs-cont">
+            <div>
+                <label for="Current_Address">Current Address</label>
+                <input required id="Current_Address" type="text" placeholder="Maple Street, Apt. 567, Springfield">
+            </div>
+            <div>
+                <label for="zip">Zip/Postal Code</label>
+                <input type="text" id="zip" name="zip" placeholder="12345" maxlength="5">
+            </div>
+        </div>
+        <div class="inputs-cont">
+            <div>
+                <label for="date">Preferred Move-in Date</label>
+                <input required id="date" type="date">
+            </div>
+            <div>
+                <label for="cc">Monthly Budget Range</label>
+                <div id="MBR">
+                    <input required id="cc" type="text" placeholder="From">
+                    <input required id="cc" type="text" placeholder="To">
+                </div>
+            </div>
+        </div>
+        <div class="inputs-cont">
+            <div style="display: flex;flex-direction: row;">
+                <input required id="email" type="checkbox">
+                <label for="email">Are you moving in with a pet?</label>
+            </div>
+            <div>
+                <label for="cc">Desired Location of Apartment </label>
+                <input required id="cc" type="text" placeholder="(e.g City, Neighborhood, or Zip Code).">
+            </div>
+            <div>
+                <label for="cc">Type of Rental Property</label>
+                <input required id="cc" type="text" placeholder=" (e.g Studio, 1BD,2BD).">
+            </div>
+        </div>
+    
         <div class="inputs-cont">
             <div>
                 <label for="email">Email</label>
@@ -66,10 +104,10 @@
         <div id="message-container">
             <p id="success-message"
                 style="border: 1px solid green;border-radius: 5px; display: none;color:green;font-weight: bold;padding: 5px;width: fit-content;">
-                </p>
+            </p>
             <p id="error-message"
                 style="border: 1px solid red;color: red; display: none;border-radius: 5px;font-weight: bold;padding: 5px;width: fit-content;">
-                </p>
+            </p>
         </div>
         <div id="loading-container">
         </div>
@@ -81,6 +119,9 @@
                 <input type="submit" value="Confirm">
             </div>
         </div>
+        <footer>
+            Once we find a place that matches your preferences, you will receive an email notification with the details.
+        </footer>
     </form>
     <script src="app.js"></script>
 </body>

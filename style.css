@@ -20,6 +20,7 @@ form {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1em;
+  row-gap: 1em;
 }
 .inputs-cont div {
   display: flex;
@@ -46,6 +47,19 @@ form {
 .logo-cont{
   display: flex;
   align-items: center;
+}
+#MBR{
+  display: flex;
+  flex-direction: row;
+
+  width: 100%!important;
+}
+#MBR input{
+  width: 20%;
+}
+
+footer{
+  text-align: center;
 }
 input[type="date"] {
   color: #8a8a8a; /* Change the text color */
