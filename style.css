@@ -43,7 +43,10 @@ form {
   font-size: 18px;
   border: 3px solid rgb(224, 224, 224);
 }
-
+.logo-cont{
+  display: flex;
+  align-items: center;
+}
 input[type="date"] {
   color: #8a8a8a; /* Change the text color */
   text-transform: uppercase; /* Text transformation */
