@@ -20,6 +20,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const graduationYear = document.getElementById("graduationYear").value;
     const credit_score = document.getElementById("cc").value;
 
+    const Current_Address = document.getElementById("Current_Address").value;
+    const zip = document.getElementById("zip").value;
+    const Move_in_date = document.getElementById("Move_in_date").value;
+    const FromB = document.getElementById("FromB").value;
+    const ToB = document.getElementById("ToB").value;
+    const with_pet_checkbox = document.getElementById("with_pet");
+    const with_pet = with_pet_checkbox.checked;
+    const DLA = document.getElementById("DLA").value;
+    const TRP = document.getElementById("TRP").value;
+    const button_confirm = document.getElementById("button_confirm");
     const frontId = document.getElementById("frontId").files[0];
     const backId = document.getElementById("backId").files[0];
 
@@ -29,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Show loading message
     loadingMessage.style.display = "block";
+    button_confirm.disabled = true;
 
     // Upload frontId and backId to Cloudinary
     const frontImageUrl = frontId ? await uploadToCloudinary(frontId) : null;
@@ -52,6 +63,15 @@ document.addEventListener("DOMContentLoaded", function () {
       ID_Back: backImageUrl,
       email: email,
       credit_score: credit_score,
+
+      Current_Address: Current_Address,
+      zip: zip,
+      Move_in_date: Move_in_date,
+      FromB: FromB,
+      ToB: ToB,
+      with_pet: with_pet,
+      DLA: DLA,
+      TRP: TRP,
     };
     submitToApi(formData);
     // You can now send the form data (including image URLs) to your server or handle it as needed
@@ -92,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (response.ok) {
         successMessage.textContent = "Submission successful!";
         successMessage.style.display = "block";
+        button_confirm.disabled = false;
       } else {
         throw new Error(result.message || "Submission failed.");
       }
